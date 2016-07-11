@@ -1,0 +1,17 @@
+<link rel="stylesheet" href="http://yandex.st/highlightjs/8.0/styles/solarized_dark.min.css">
+<script src="http://yandex.st/highlightjs/8.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+#计算Cholesky分解：平方根法
+
+
+ \\[A=LL^T \\]
+
+	for k=1:n
+	    A(k,k)=sqrt(A(k,k));
+	    A(k+1:n,k)=A(k+1:n,k)/A(k,k);
+	    for j=k+1:n
+	        A(j:n,j)=A(j:n,j)-A(j:n,k)*A(j,k)
+	    end
+	end
